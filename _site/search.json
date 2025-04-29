@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "my-documentation",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Mis proyectos destacados\n\nWordPress Dev en Local"
+  },
+  {
+    "objectID": "projects/wordpress-dev-en-local.html",
+    "href": "projects/wordpress-dev-en-local.html",
+    "title": "WordPress Dev en Local",
+    "section": "",
+    "text": "Este proyecto proporciona un entorno de desarrollo local para WordPress usando Docker Compose, diseñado para que cualquier desarrollador pueda trabajar sin instalaciones complicadas.\n\n\n\n\n\n\nInstalación Rápida\n\n\n\nIdeal para levantar un WordPress funcional en pocos minutos, con persistencia de datos y hot-reload.\n\n\n\n\n\n\nPrimero, comprueba si ya tienes Docker instalado en tu sistema:\ndocker --version\nSi ves una respuesta tipo Docker version 20.10.x, ¡ya lo tienes instalado! Si no, sigue con la instalación.\n\n\n\n\nWindows/MacLinux (Ubuntu)\n\n\n\nDescarga e instala Docker Desktop\nSigue las instrucciones del instalador\nInicia Docker Desktop una vez instalado\n\n\n\nsudo apt update\nsudo apt install docker.io docker-compose-plugin\nsudo systemctl start docker\nsudo systemctl enable docker\n\n# Agrega tu usuario al grupo docker (opcional pero recomendado)\nsudo usermod -aG docker $USER\nnewgrp docker\n\n\n\nVerifica que Docker funcione correctamente:\ndocker run hello-world\n\n\n\ngit clone https://github.com/Alexkano10/wordpress-dev-en-local.git\ncd wordpress-dev-en-local\n\n\n\ncp .env.example .env\nEdita el archivo .env con tus credenciales de base de datos y versiones preferidas.\n\n\n\n\n\n\nVariables principales\n\n\n\n\n\n\nVariable\nDescripción\n\n\n\n\nMYSQL_ROOT_PASSWORD\nContraseña root de MySQL\n\n\nMYSQL_DATABASE\nNombre de la base de datos\n\n\nMYSQL_USER\nUsuario de WordPress\n\n\nMYSQL_PASSWORD\nContraseña del usuario\n\n\nWORDPRESS_TABLE_PREFIX\nPrefijo de tablas WordPress\n\n\nMYSQL_VERSION\nVersión de MySQL o MariaDB\n\n\nWORDPRESS_VERSION\nVersión de WordPress\n\n\n\n\n\n\n\n\n./scripts/start.sh\nUna vez levantado el entorno, accede a http://localhost:8000 para ver tu instalación de WordPress.\n\n\n\n\n\n\n# Detener todos los servicios\ndocker compose down\n\n# Reiniciar solo WordPress\ndocker compose up -d wordpress\n\n# Forzar reconstrucción (cuando cambias Dockerfile o dependencias)\ndocker compose up -d --build\n\n\n\n# Logs de todos los servicios\ndocker compose logs\n\n# Logs de WordPress\ndocker compose logs wordpress\n\n# Logs en tiempo real\ndocker compose logs -f\n\n\n\n\n\n\nLas variables de .env controlan todo el entorno:\nMYSQL_ROOT_PASSWORD=rootpassword\nMYSQL_DATABASE=wordpress\nMYSQL_USER=wp_user\nMYSQL_PASSWORD=wp_password\nWORDPRESS_TABLE_PREFIX=wp_\nMYSQL_VERSION=8.0\nWORDPRESS_VERSION=latest\n\n\n\nwordpress-dev-en-local/\n├── database/                # Persistencia de MySQL\n├── wordpress/               # Código fuente de WordPress\n├── docker-compose.yml       # Configuración de servicios\n├── .env.example             # Plantilla de variables de entorno\n├── .env                     # Variables de entorno (no versionado)\n└── scripts/\n    └── start.sh             # Script de inicio\n\n\n\n\n\nProblemas comunesPermisosPuertos\n\n\n\n\n\n\n\n\n\nProblema\nSolución\n\n\n\n\nVariables no definidas\nVerifica que hayas copiado y editado .env correctamente\n\n\nPermisos de carpetas\nEjecuta chown -R $UID:$UID database wordpress\n\n\nHot-reload no funciona\nAsegúrate de editar dentro de ./wordpress y recarga el navegador\n\n\nPuerto 8000 ocupado\nCambia el puerto en docker-compose.yml y reinicia los servicios\n\n\nError de conexión a MySQL\nVerifica que credenciales en .env y WordPress coincidan\n\n\n\n\n\nSi tienes problemas de permisos en Linux:\n# Solución para permisos en Linux\nsudo chown -R $USER:$USER database wordpress\n\n\nSi el puerto 8000 está ocupado, puedes cambiarlo en el archivo docker-compose.yml:\nservices:\n  wordpress:\n    ports:\n      - \"8001:80\"  # Cambia 8000 por otro puerto disponible\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nEste entorno está pensado para desarrollo. No usar en producción tal cual.\n\n\n\nSiempre mantén Docker actualizado para evitar incompatibilidades.\nPuedes cambiar la versión de WordPress simplemente editando .env y reconstruyendo los servicios.\nPara personalizar más la instalación, puedes modificar el archivo docker-compose.yml.\n\n\n\n\nSi encuentras errores o tienes sugerencias de mejora, no dudes en abrir un issue o enviar un pull request en el repositorio.\n\nDesarrollado con ❤️ para la comunidad de WordPress"
+  },
+  {
+    "objectID": "projects/wordpress-dev-en-local.html#instalación-paso-a-paso",
+    "href": "projects/wordpress-dev-en-local.html#instalación-paso-a-paso",
+    "title": "WordPress Dev en Local",
+    "section": "",
+    "text": "Primero, comprueba si ya tienes Docker instalado en tu sistema:\ndocker --version\nSi ves una respuesta tipo Docker version 20.10.x, ¡ya lo tienes instalado! Si no, sigue con la instalación.\n\n\n\n\nWindows/MacLinux (Ubuntu)\n\n\n\nDescarga e instala Docker Desktop\nSigue las instrucciones del instalador\nInicia Docker Desktop una vez instalado\n\n\n\nsudo apt update\nsudo apt install docker.io docker-compose-plugin\nsudo systemctl start docker\nsudo systemctl enable docker\n\n# Agrega tu usuario al grupo docker (opcional pero recomendado)\nsudo usermod -aG docker $USER\nnewgrp docker\n\n\n\nVerifica que Docker funcione correctamente:\ndocker run hello-world\n\n\n\ngit clone https://github.com/Alexkano10/wordpress-dev-en-local.git\ncd wordpress-dev-en-local\n\n\n\ncp .env.example .env\nEdita el archivo .env con tus credenciales de base de datos y versiones preferidas.\n\n\n\n\n\n\nVariables principales\n\n\n\n\n\n\nVariable\nDescripción\n\n\n\n\nMYSQL_ROOT_PASSWORD\nContraseña root de MySQL\n\n\nMYSQL_DATABASE\nNombre de la base de datos\n\n\nMYSQL_USER\nUsuario de WordPress\n\n\nMYSQL_PASSWORD\nContraseña del usuario\n\n\nWORDPRESS_TABLE_PREFIX\nPrefijo de tablas WordPress\n\n\nMYSQL_VERSION\nVersión de MySQL o MariaDB\n\n\nWORDPRESS_VERSION\nVersión de WordPress\n\n\n\n\n\n\n\n\n./scripts/start.sh\nUna vez levantado el entorno, accede a http://localhost:8000 para ver tu instalación de WordPress."
+  },
+  {
+    "objectID": "projects/wordpress-dev-en-local.html#uso-diario",
+    "href": "projects/wordpress-dev-en-local.html#uso-diario",
+    "title": "WordPress Dev en Local",
+    "section": "",
+    "text": "# Detener todos los servicios\ndocker compose down\n\n# Reiniciar solo WordPress\ndocker compose up -d wordpress\n\n# Forzar reconstrucción (cuando cambias Dockerfile o dependencias)\ndocker compose up -d --build\n\n\n\n# Logs de todos los servicios\ndocker compose logs\n\n# Logs de WordPress\ndocker compose logs wordpress\n\n# Logs en tiempo real\ndocker compose logs -f"
+  },
+  {
+    "objectID": "projects/wordpress-dev-en-local.html#configuración-avanzada",
+    "href": "projects/wordpress-dev-en-local.html#configuración-avanzada",
+    "title": "WordPress Dev en Local",
+    "section": "",
+    "text": "Las variables de .env controlan todo el entorno:\nMYSQL_ROOT_PASSWORD=rootpassword\nMYSQL_DATABASE=wordpress\nMYSQL_USER=wp_user\nMYSQL_PASSWORD=wp_password\nWORDPRESS_TABLE_PREFIX=wp_\nMYSQL_VERSION=8.0\nWORDPRESS_VERSION=latest\n\n\n\nwordpress-dev-en-local/\n├── database/                # Persistencia de MySQL\n├── wordpress/               # Código fuente de WordPress\n├── docker-compose.yml       # Configuración de servicios\n├── .env.example             # Plantilla de variables de entorno\n├── .env                     # Variables de entorno (no versionado)\n└── scripts/\n    └── start.sh             # Script de inicio"
+  },
+  {
+    "objectID": "projects/wordpress-dev-en-local.html#solución-de-problemas",
+    "href": "projects/wordpress-dev-en-local.html#solución-de-problemas",
+    "title": "WordPress Dev en Local",
+    "section": "",
+    "text": "Problemas comunesPermisosPuertos\n\n\n\n\n\n\n\n\n\nProblema\nSolución\n\n\n\n\nVariables no definidas\nVerifica que hayas copiado y editado .env correctamente\n\n\nPermisos de carpetas\nEjecuta chown -R $UID:$UID database wordpress\n\n\nHot-reload no funciona\nAsegúrate de editar dentro de ./wordpress y recarga el navegador\n\n\nPuerto 8000 ocupado\nCambia el puerto en docker-compose.yml y reinicia los servicios\n\n\nError de conexión a MySQL\nVerifica que credenciales en .env y WordPress coincidan\n\n\n\n\n\nSi tienes problemas de permisos en Linux:\n# Solución para permisos en Linux\nsudo chown -R $USER:$USER database wordpress\n\n\nSi el puerto 8000 está ocupado, puedes cambiarlo en el archivo docker-compose.yml:\nservices:\n  wordpress:\n    ports:\n      - \"8001:80\"  # Cambia 8000 por otro puerto disponible"
+  },
+  {
+    "objectID": "projects/wordpress-dev-en-local.html#notas-finales",
+    "href": "projects/wordpress-dev-en-local.html#notas-finales",
+    "title": "WordPress Dev en Local",
+    "section": "",
+    "text": "Important\n\n\n\nEste entorno está pensado para desarrollo. No usar en producción tal cual.\n\n\n\nSiempre mantén Docker actualizado para evitar incompatibilidades.\nPuedes cambiar la versión de WordPress simplemente editando .env y reconstruyendo los servicios.\nPara personalizar más la instalación, puedes modificar el archivo docker-compose.yml."
+  },
+  {
+    "objectID": "projects/wordpress-dev-en-local.html#actualizaciones-y-contribuciones",
+    "href": "projects/wordpress-dev-en-local.html#actualizaciones-y-contribuciones",
+    "title": "WordPress Dev en Local",
+    "section": "",
+    "text": "Si encuentras errores o tienes sugerencias de mejora, no dudes en abrir un issue o enviar un pull request en el repositorio.\n\nDesarrollado con ❤️ para la comunidad de WordPress"
+  }
+]

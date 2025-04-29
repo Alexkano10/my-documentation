@@ -2,20 +2,20 @@ project:
   type: website
 
 website:
-  title: "my-documentation"
+  title: "Alex Cano | Portfolio"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
-format:
-  html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
-    toc: true
-
-
-
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Sobre mí"
+        href: about.qmd
+      - text: "Proyectos"
+        menu:
+          - text: "Todos los proyectos"
+            href: projects/index.qmd
+          - text: "WordPress Dev en Local"
+            href: projects/wordpress-dev-en-local.qmd
+      - text: "Certificaciones"
+        href: certifications.qmd
+      - text: "Contacto"
+        href: contact.qmd

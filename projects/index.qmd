@@ -1,0 +1,8 @@
+---
+title: "Proyectos"
+format: html
+---
+
+# Mis proyectos destacados
+
+- [WordPress Dev en Local](wordpress-dev-en-local.qmd)

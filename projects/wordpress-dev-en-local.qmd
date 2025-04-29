@@ -1,0 +1,214 @@
+---
+title: "WordPress Dev en Local"
+subtitle: "Entorno de desarrollo con Docker Compose"
+author: "Alexkano10"
+date: last-modified
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    code-copy: true
+    highlight-style: github
+    code-tools: true
+    css: styles.css
+---
+
+# WordPress Dev en Local
+
+Este proyecto proporciona un entorno de desarrollo local para **WordPress** usando **Docker Compose**, diseñado para que cualquier desarrollador pueda trabajar sin instalaciones complicadas.
+
+::: {.callout-tip appearance="simple"}
+## Instalación Rápida
+Ideal para levantar un WordPress funcional en pocos minutos, con persistencia de datos y hot-reload.
+:::
+
+## 🚀 Instalación paso a paso
+
+### Requisitos previos
+
+Primero, comprueba si ya tienes Docker instalado en tu sistema:
+
+```bash
+docker --version
+```
+
+Si ves una respuesta tipo `Docker version 20.10.x`, ¡ya lo tienes instalado! Si no, sigue con la instalación.
+
+### 1. Instalar Docker y Docker Compose
+
+:::: {.panel-tabset}
+
+## Windows/Mac
+- Descarga e instala [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- Sigue las instrucciones del instalador
+- Inicia Docker Desktop una vez instalado
+
+## Linux (Ubuntu)
+```bash
+sudo apt update
+sudo apt install docker.io docker-compose-plugin
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Agrega tu usuario al grupo docker (opcional pero recomendado)
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+::::
+
+Verifica que Docker funcione correctamente:
+
+```bash
+docker run hello-world
+```
+
+### 2. Clonar el repositorio
+
+```bash
+git clone https://github.com/Alexkano10/wordpress-dev-en-local.git
+cd wordpress-dev-en-local
+```
+
+### 3. Configurar variables de entorno
+
+```bash
+cp .env.example .env
+```
+
+Edita el archivo `.env` con tus credenciales de base de datos y versiones preferidas.
+
+::: {.callout-note}
+## Variables principales
+
+| Variable | Descripción |
+|----------|-------------|
+| `MYSQL_ROOT_PASSWORD` | Contraseña root de MySQL |
+| `MYSQL_DATABASE` | Nombre de la base de datos |
+| `MYSQL_USER` | Usuario de WordPress |
+| `MYSQL_PASSWORD` | Contraseña del usuario |
+| `WORDPRESS_TABLE_PREFIX` | Prefijo de tablas WordPress |
+| `MYSQL_VERSION` | Versión de MySQL o MariaDB |
+| `WORDPRESS_VERSION` | Versión de WordPress |
+:::
+
+### 4. Iniciar el entorno
+
+```bash
+./scripts/start.sh
+```
+
+Una vez levantado el entorno, accede a [http://localhost:8000](http://localhost:8000) para ver tu instalación de WordPress.
+
+## 🛠️ Uso diario
+
+### Gestión de servicios
+
+```bash
+# Detener todos los servicios
+docker compose down
+
+# Reiniciar solo WordPress
+docker compose up -d wordpress
+
+# Forzar reconstrucción (cuando cambias Dockerfile o dependencias)
+docker compose up -d --build
+```
+
+### Acceso a logs
+
+```bash
+# Logs de todos los servicios
+docker compose logs
+
+# Logs de WordPress
+docker compose logs wordpress
+
+# Logs en tiempo real
+docker compose logs -f
+```
+
+## 🔧 Configuración avanzada
+
+### Variables de entorno
+
+Las variables de `.env` controlan todo el entorno:
+
+```env
+MYSQL_ROOT_PASSWORD=rootpassword
+MYSQL_DATABASE=wordpress
+MYSQL_USER=wp_user
+MYSQL_PASSWORD=wp_password
+WORDPRESS_TABLE_PREFIX=wp_
+MYSQL_VERSION=8.0
+WORDPRESS_VERSION=latest
+```
+
+### Estructura del proyecto
+
+```plaintext
+wordpress-dev-en-local/
+├── database/                # Persistencia de MySQL
+├── wordpress/               # Código fuente de WordPress
+├── docker-compose.yml       # Configuración de servicios
+├── .env.example             # Plantilla de variables de entorno
+├── .env                     # Variables de entorno (no versionado)
+└── scripts/
+    └── start.sh             # Script de inicio
+```
+
+## ⚠️ Solución de problemas
+
+::: {.panel-tabset}
+
+## Problemas comunes
+
+| Problema | Solución |
+|----------|----------|
+| Variables no definidas | Verifica que hayas copiado y editado `.env` correctamente |
+| Permisos de carpetas | Ejecuta `chown -R $UID:$UID database wordpress` |
+| Hot-reload no funciona | Asegúrate de editar dentro de `./wordpress` y recarga el navegador |
+| Puerto 8000 ocupado | Cambia el puerto en `docker-compose.yml` y reinicia los servicios |
+| Error de conexión a MySQL | Verifica que credenciales en `.env` y WordPress coincidan |
+
+## Permisos
+
+Si tienes problemas de permisos en Linux:
+
+```bash
+# Solución para permisos en Linux
+sudo chown -R $USER:$USER database wordpress
+```
+
+## Puertos
+
+Si el puerto 8000 está ocupado, puedes cambiarlo en el archivo `docker-compose.yml`:
+
+```yaml
+services:
+  wordpress:
+    ports:
+      - "8001:80"  # Cambia 8000 por otro puerto disponible
+```
+
+:::
+
+## 📋 Notas finales
+
+::: {.callout-important}
+Este entorno está pensado para desarrollo. No usar en producción tal cual.
+:::
+
+- Siempre mantén Docker actualizado para evitar incompatibilidades.
+- Puedes cambiar la versión de WordPress simplemente editando `.env` y reconstruyendo los servicios.
+- Para personalizar más la instalación, puedes modificar el archivo `docker-compose.yml`.
+
+## 🔄 Actualizaciones y contribuciones
+
+Si encuentras errores o tienes sugerencias de mejora, no dudes en abrir un issue o enviar un pull request en el repositorio.
+
+---
+
+Desarrollado con ❤️ para la comunidad de WordPress
