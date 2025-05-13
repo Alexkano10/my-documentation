@@ -1,7 +1,28 @@
 ---
-title: "my-documentation"
+title: "Junior DevOps and SysAdmin"
+format: 
+  html:
+    theme: flatly
+    css: styles.css
 ---
 
-This is a Quarto website.
+::: {.callout-info}
+## **Bienvenidos** 👋  
+Soy **Alex Cano** y este es mi portfolio. Aquí documento algunos de los trabajos y proyectos que voy realizando.  
+Mi enfoque principal está en **DevOps** y **SysAdmin**, áreas en las que me he especializado y estoy desarrollando continuamente.
+:::
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## 🛠️ Habilidades y Herramientas
+
+| Herramienta  | Nivel       |
+|--------------|-------------|
+| Linux        |  (Intermedio)     | 
+|   Docker       |  (Intermedio)    |
+| Jenkins      |  (Intermedio)  |
+| Kubernetes   |  (Básico)   |
+| Terraform    |  (Básico)   |
+| AWS          |  (Básico)      |
+
+
+
+

@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "my-documentation",
+    "title": "Junior DevOps and SysAdmin",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Soy Alex Cano y este es mi portfolio. Aquí documento algunos de los trabajos y proyectos que voy realizando.\nMi enfoque principal está en DevOps y SysAdmin, áreas en las que me he especializado y estoy desarrollando continuamente."
   },
   {
     "objectID": "about.html",
@@ -68,5 +68,19 @@
     "title": "WordPress Dev en Local",
     "section": "",
     "text": "Si encuentras errores o tienes sugerencias de mejora, no dudes en abrir un issue o enviar un pull request en el repositorio.\n\nDesarrollado con ❤️ para la comunidad de WordPress"
+  },
+  {
+    "objectID": "index.html#habilidades-y-herramientas",
+    "href": "index.html#habilidades-y-herramientas",
+    "title": "Junior DevOps and SysAdmin",
+    "section": "🛠️ Habilidades y Herramientas",
+    "text": "🛠️ Habilidades y Herramientas\n\n\n\nHerramienta\nNivel\n\n\n\n\nLinux\n(Intermedio)\n\n\nDocker\n(Intermedio)\n\n\nJenkins\n(Intermedio)\n\n\nKubernetes\n(Básico)\n\n\nTerraform\n(Básico)\n\n\nAWS\n(Básico)"
+  },
+  {
+    "objectID": "index.html#bienvenidos",
+    "href": "index.html#bienvenidos",
+    "title": "Junior DevOps and SysAdmin",
+    "section": "",
+    "text": "Soy Alex Cano y este es mi portfolio. Aquí documento algunos de los trabajos y proyectos que voy realizando.\nMi enfoque principal está en DevOps y SysAdmin, áreas en las que me he especializado y estoy desarrollando continuamente."
   }
 ]
