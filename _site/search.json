@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Junior DevOps and SysAdmin",
+    "title": "Alex Cano | Junior DevOps y SysAdmin",
     "section": "",
-    "text": "Soy Alex Cano y este es mi portfolio. Aquí documento algunos de los trabajos y proyectos que voy realizando.\nMi enfoque principal está en DevOps y SysAdmin, áreas en las que me he especializado y estoy desarrollando continuamente."
+    "text": "Soy Alex Cano y este es mi portfolio. Aquí documento proyectos reales, laboratorios y soluciones enfocadas a administración de sistemas y automatización.\nMi enfoque principal está en Linux, CI/CD, Docker, Jenkins y Cloud, áreas en las que me especializo y aprendo continuamente.\n\n🚀 “Automatiza todo lo que puedas y documenta el resto.”"
   },
   {
     "objectID": "about.html",
@@ -18,7 +18,7 @@
     "href": "projects/index.html",
     "title": "Proyectos",
     "section": "",
-    "text": "Mis proyectos destacados\n\nWordPress Dev en Local"
+    "text": "Mis proyectos destacados\n\nWordPress Dev en Local\nWordPress CI/CD con Jenkins"
   },
   {
     "objectID": "projects/wordpress-dev-en-local.html",
@@ -72,15 +72,92 @@
   {
     "objectID": "index.html#habilidades-y-herramientas",
     "href": "index.html#habilidades-y-herramientas",
-    "title": "Junior DevOps and SysAdmin",
-    "section": "🛠️ Habilidades y Herramientas",
-    "text": "🛠️ Habilidades y Herramientas\n\n\n\nHerramienta\nNivel\n\n\n\n\nLinux\n(Intermedio)\n\n\nDocker\n(Intermedio)\n\n\nJenkins\n(Intermedio)\n\n\nKubernetes\n(Básico)\n\n\nTerraform\n(Básico)\n\n\nAWS\n(Básico)"
+    "title": "Alex Cano | Junior DevOps y SysAdmin",
+    "section": "🔧 Habilidades y Herramientas",
+    "text": "🔧 Habilidades y Herramientas\n\n\n\n🧰 Herramienta\n⚙️ Nivel\n\n\n\n\nLinux\nIntermedio\n\n\nDocker\nIntermedio\n\n\nJenkins\nIntermedio\n\n\nKubernetes\nBásico\n\n\nTerraform\nBásico\n\n\nAWS\nBásico"
   },
   {
     "objectID": "index.html#bienvenidos",
     "href": "index.html#bienvenidos",
-    "title": "Junior DevOps and SysAdmin",
+    "title": "Alex Cano | Junior DevOps y SysAdmin",
     "section": "",
-    "text": "Soy Alex Cano y este es mi portfolio. Aquí documento algunos de los trabajos y proyectos que voy realizando.\nMi enfoque principal está en DevOps y SysAdmin, áreas en las que me he especializado y estoy desarrollando continuamente."
+    "text": "Soy Alex Cano y este es mi portfolio. Aquí documento proyectos reales, laboratorios y soluciones enfocadas a administración de sistemas y automatización.\nMi enfoque principal está en Linux, CI/CD, Docker, Jenkins y Cloud, áreas en las que me especializo y aprendo continuamente.\n\n🚀 “Automatiza todo lo que puedas y documenta el resto.”"
+  },
+  {
+    "objectID": "certifications.html",
+    "href": "certifications.html",
+    "title": "Certificaciones",
+    "section": "",
+    "text": "Tip\n\n\n\nCursos y certificaciones que he completado.\n\n\n\n\n\n\n\n\nCertificación\nVer imagen\nDescargar PDF\n\n\n\n\nFullstack Junior en Java\n\nPDF\n\n\nJava Programming 1\n\nPDF\n\n\n\n\n\n\n\n\n\n\nCertificación\nVer imagen\nDescargar PDF\n\n\n\n\nConceptos Básicos de Redes (Cisco)\n\nPDF\n\n\n\n\n\n\n\n\n\n\n\n\nCertificación\nVer imagen\nDescargar PDF\n\n\n\n\nHerramientas DevOps\n\nPDF"
+  },
+  {
+    "objectID": "certifications.html#fullstack-java",
+    "href": "certifications.html#fullstack-java",
+    "title": "Certificaciones",
+    "section": "",
+    "text": "Certificación\nVer imagen\nDescargar PDF\n\n\n\n\nFullstack Junior en Java\n\nPDF\n\n\nJava Programming 1\n\nPDF"
+  },
+  {
+    "objectID": "certifications.html#redes-cisco",
+    "href": "certifications.html#redes-cisco",
+    "title": "Certificaciones",
+    "section": "",
+    "text": "Certificación\nVer imagen\nDescargar PDF\n\n\n\n\nConceptos Básicos de Redes (Cisco)\n\nPDF"
+  },
+  {
+    "objectID": "certifications.html#devops",
+    "href": "certifications.html#devops",
+    "title": "Certificaciones",
+    "section": "",
+    "text": "Certificación\nVer imagen\nDescargar PDF\n\n\n\n\nHerramientas DevOps\n\nPDF"
+  },
+  {
+    "objectID": "projects/wordpress-jenkins.html",
+    "href": "projects/wordpress-jenkins.html",
+    "title": "WordPress Deploy con Jenkins",
+    "section": "",
+    "text": "Este documento describe la estructura, configuración y proceso de despliegue de una aplicación WordPress en un entorno de desarrollo, producción y Jenkins para CI/CD, utilizando contenedores Docker y sincronización automatizada mediante Jenkins.\n\n\n\n\n\n\n\nEspecificación\nDetalle\n\n\n\n\nSistema operativo\nDebian 12\n\n\nUsuario\nprod\n\n\nIP estática\n192.168.1.100\n\n\nRecursos\n2 CPU, 2048 MB RAM, 19GB disco\n\n\n\n\n\n\n\n\n\nEspecificación\nDetalle\n\n\n\n\nSistema operativo\nDebian 12\n\n\nUsuario\ndev\n\n\nIP estática\n192.168.1.101\n\n\nRecursos\n2 CPU, 2048 MB RAM, 19GB disco\n\n\n\n\n\n\n\n\n\nEspecificación\nDetalle\n\n\n\n\nSistema operativo\nDebian 12\n\n\nUsuario\njenkins\n\n\nIP estática\n192.168.1.102\n\n\nRecursos\n2 CPU, 2048 MB RAM, 19GB disco\n\n\n\n\n\n\n\nLa estructura del proyecto en el entorno de desarrollo se organiza de la siguiente manera:\n/home/dev/test/\n├── database\n│   └── initdb        # Contiene scripts para inicialización de base de datos\n├── docker-compose.yml\n├── .env                 # Variables de entorno (excluido de sincronización)\n└── wordpress          # Código fuente del sitio\n\n\n\nwp_app: WordPress (último)\nwp_db: MariaDB 10.11\n\n\n\n\nservices:\n  db:\n    image: \"mariadb:${MARIADB_VERSION}\"\n    container_name: wp_db\n    ...\n  wordpress:\n    image: \"wordpress:${WORDPRESS_VERSION}\"\n    user: \"${LOCAL_UID}:${LOCAL_GID}\"\n    container_name: wp_app\n    depends_on:\n      - db\n    volumes:\n      - ./wordpress:/var/www/html:delegated\n    environment:\n      - APACHE_RUN_USER=#${LOCAL_UID}\n      - APACHE_RUN_GROUP=#${LOCAL_GID}\n\n\n\n\n\n\n\n\nVerificar conectividad remota con las VMs de DEV y PROD mediante SSH y Jenkins.\n\n\n\n\nConfigurar claves SSH en las VMs y credenciales en Jenkins\nCrear job Freestyle\nActivar SSH Agent\nConfigurar Build Step para ejecutar comandos\n\n\n\n\necho \"Conectando a DEV (101)...\"\nssh -o StrictHostKeyChecking=no dev@192.168.1.101 \"hostname && uptime\"\n\necho \"Conectando a PROD (100)...\"\nssh -o StrictHostKeyChecking=no prod@192.168.1.100 \"hostname && uptime\"\n\n\n\nConexión exitosa que muestra hostname y uptime de cada VM.\n\n\n\n\n\n\n\nSincronizar el código de la VM de desarrollo a la de producción, excluyendo .env, estableciendo permisos correctos y evitando transferencias innecesarias.\n\n\n\n#!/bin/bash\nset -e\n\necho \"==&gt; Instalando rsync (temporal)...\"\napt-get update && apt-get install -y rsync\n\nDEV_HOST=\"dev@192.168.1.101\"\nPROD_HOST=\"prod@192.168.1.100\"\nSOURCE_DIR=\"/home/dev/test/\"\nDEST_DIR=\"/home/prod/test/\"\nTMP_DIR=\"./sync_tmp/\"\n\nrm -rf \"$TMP_DIR\"\nmkdir -p \"$TMP_DIR\"\n\necho \"==&gt; Sincronizando desde DEV a Jenkins (excluyendo .env)...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$DEV_HOST:$SOURCE_DIR\" \\\n  \"$TMP_DIR\"\n\necho \"==&gt; Enviando a producción (con permisos y propietario www-data)...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  --chown=www-data:www-data \\\n  --chmod=D755,F644 \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$TMP_DIR\" \\\n  \"$PROD_HOST:$DEST_DIR\"\n\necho \"==&gt; Completado\"\n\n\n\n\nSe instala rsync temporalmente en el servidor Jenkins\nSe sincroniza localmente en Jenkins desde DEV (excluyendo .env)\nSe sube a PROD cambiando propietario a www-data y asegurando permisos seguros\n--no-perms, --no-owner, --no-group: evita sobreescritura de metadatos desde DEV\n\n\n\n\n\n\n\n\n\nSincronizar únicamente los cambios realizados en la carpeta de código (wordpress/) desde la VM DEV a la VM PROD, preservando:\n\nEl archivo .env de producción\nLos permisos actuales definidos por UID:GID en PROD\nLa base de datos y contenedores en ejecución\nBackup previo al despliegue para permitir rollback\n\n\n\n\nEn DEV se creó un archivo test.php con el siguiente contenido para verificar la sincronización:\n&lt;?php\necho \"&lt;h1&gt;Prueba de Sincronización DEV → PROD&lt;/h1&gt;\";\necho \"&lt;p&gt;Versión desde Jenkins: \" . date(\"Y-m-d H:i:s\") . \"&lt;/p&gt;\";\n?&gt;\nURL de prueba en PROD: http://192.168.1.100/test.php\n\n\n\n#!/bin/bash\nset -e\n\n# Variables\nDEV_HOST=\"dev@192.168.1.101\"\nPROD_HOST=\"prod@192.168.1.100\"\nSOURCE_DIR=\"/home/dev/test/wordpress/\"\nDEST_DIR=\"/home/prod/test/wordpress/\"\nTMP_DIR=\"./sync_tmp/\"\nBACKUP_DIR=\"/home/prod/backups/$(date +%Y%m%d_%H%M%S)\"\n\necho \"==&gt; Limpieza del temporal...\"\nrm -rf \"$TMP_DIR\"\nmkdir -p \"$TMP_DIR\"\n\necho \"==&gt; Descargando código desde DEV (sin .env)...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$DEV_HOST:$SOURCE_DIR\" \\\n  \"$TMP_DIR\"\n\necho \"==&gt; Creando backup en PROD...\"\nssh -o StrictHostKeyChecking=no \"$PROD_HOST\" \"mkdir -p $BACKUP_DIR && cp -r $DEST_DIR/* $BACKUP_DIR\"\n\necho \"==&gt; Subiendo a producción sin modificar permisos ni .env...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$TMP_DIR\" \\\n  \"$PROD_HOST:$DEST_DIR\"\n\necho \"==&gt; Despliegue completado sin tocar permisos ni .env\"\n\n\n\n\nSolo se sincronizan archivos modificados (rsync incremental)\n.env no se sobrescribe\nPermisos en PROD permanecen intactos\nLa web refleja los cambios sin necesidad de reiniciar contenedores\nExiste un backup creado en /home/prod/backups/YYYYMMDD_HHMMSS\n\n\n\n\nEn caso de necesitar revertir los cambios, ejecutar:\nssh prod@192.168.1.100\ncp -r /home/prod/backups/20250522_082000/* /home/prod/test/wordpress/\n\n\n\n\n\n\n\nLas claves SSH se configuran sin passphrase para automatización\nStrictHostKeyChecking deshabilitado para conexiones automáticas\nExclusión del archivo .env para mantener configuraciones específicas del entorno\n\n\n\n\n\nUso de rsync para transferencias incrementales\nSincronización temporal en Jenkins para optimizar red\nPreservación de permisos existentes en producción\n\n\n\n\n\nLogs detallados de cada etapa del proceso\nVerificación de conectividad previa al despliegue\nSistema de backup automático antes de cada actualización"
+  },
+  {
+    "objectID": "projects/wordpress-jenkins.html#infraestructura-de-las-vms",
+    "href": "projects/wordpress-jenkins.html#infraestructura-de-las-vms",
+    "title": "WordPress Deploy con Jenkins",
+    "section": "",
+    "text": "Especificación\nDetalle\n\n\n\n\nSistema operativo\nDebian 12\n\n\nUsuario\nprod\n\n\nIP estática\n192.168.1.100\n\n\nRecursos\n2 CPU, 2048 MB RAM, 19GB disco\n\n\n\n\n\n\n\n\n\nEspecificación\nDetalle\n\n\n\n\nSistema operativo\nDebian 12\n\n\nUsuario\ndev\n\n\nIP estática\n192.168.1.101\n\n\nRecursos\n2 CPU, 2048 MB RAM, 19GB disco\n\n\n\n\n\n\n\n\n\nEspecificación\nDetalle\n\n\n\n\nSistema operativo\nDebian 12\n\n\nUsuario\njenkins\n\n\nIP estática\n192.168.1.102\n\n\nRecursos\n2 CPU, 2048 MB RAM, 19GB disco"
+  },
+  {
+    "objectID": "projects/wordpress-jenkins.html#estructura-del-proyecto-en-dev",
+    "href": "projects/wordpress-jenkins.html#estructura-del-proyecto-en-dev",
+    "title": "WordPress Deploy con Jenkins",
+    "section": "",
+    "text": "La estructura del proyecto en el entorno de desarrollo se organiza de la siguiente manera:\n/home/dev/test/\n├── database\n│   └── initdb        # Contiene scripts para inicialización de base de datos\n├── docker-compose.yml\n├── .env                 # Variables de entorno (excluido de sincronización)\n└── wordpress          # Código fuente del sitio\n\n\n\nwp_app: WordPress (último)\nwp_db: MariaDB 10.11\n\n\n\n\nservices:\n  db:\n    image: \"mariadb:${MARIADB_VERSION}\"\n    container_name: wp_db\n    ...\n  wordpress:\n    image: \"wordpress:${WORDPRESS_VERSION}\"\n    user: \"${LOCAL_UID}:${LOCAL_GID}\"\n    container_name: wp_app\n    depends_on:\n      - db\n    volumes:\n      - ./wordpress:/var/www/html:delegated\n    environment:\n      - APACHE_RUN_USER=#${LOCAL_UID}\n      - APACHE_RUN_GROUP=#${LOCAL_GID}"
+  },
+  {
+    "objectID": "projects/wordpress-jenkins.html#jenkins-automatización-y-despliegue",
+    "href": "projects/wordpress-jenkins.html#jenkins-automatización-y-despliegue",
+    "title": "WordPress Deploy con Jenkins",
+    "section": "",
+    "text": "Verificar conectividad remota con las VMs de DEV y PROD mediante SSH y Jenkins.\n\n\n\n\nConfigurar claves SSH en las VMs y credenciales en Jenkins\nCrear job Freestyle\nActivar SSH Agent\nConfigurar Build Step para ejecutar comandos\n\n\n\n\necho \"Conectando a DEV (101)...\"\nssh -o StrictHostKeyChecking=no dev@192.168.1.101 \"hostname && uptime\"\n\necho \"Conectando a PROD (100)...\"\nssh -o StrictHostKeyChecking=no prod@192.168.1.100 \"hostname && uptime\"\n\n\n\nConexión exitosa que muestra hostname y uptime de cada VM.\n\n\n\n\n\n\n\nSincronizar el código de la VM de desarrollo a la de producción, excluyendo .env, estableciendo permisos correctos y evitando transferencias innecesarias.\n\n\n\n#!/bin/bash\nset -e\n\necho \"==&gt; Instalando rsync (temporal)...\"\napt-get update && apt-get install -y rsync\n\nDEV_HOST=\"dev@192.168.1.101\"\nPROD_HOST=\"prod@192.168.1.100\"\nSOURCE_DIR=\"/home/dev/test/\"\nDEST_DIR=\"/home/prod/test/\"\nTMP_DIR=\"./sync_tmp/\"\n\nrm -rf \"$TMP_DIR\"\nmkdir -p \"$TMP_DIR\"\n\necho \"==&gt; Sincronizando desde DEV a Jenkins (excluyendo .env)...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$DEV_HOST:$SOURCE_DIR\" \\\n  \"$TMP_DIR\"\n\necho \"==&gt; Enviando a producción (con permisos y propietario www-data)...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  --chown=www-data:www-data \\\n  --chmod=D755,F644 \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$TMP_DIR\" \\\n  \"$PROD_HOST:$DEST_DIR\"\n\necho \"==&gt; Completado\"\n\n\n\n\nSe instala rsync temporalmente en el servidor Jenkins\nSe sincroniza localmente en Jenkins desde DEV (excluyendo .env)\nSe sube a PROD cambiando propietario a www-data y asegurando permisos seguros\n--no-perms, --no-owner, --no-group: evita sobreescritura de metadatos desde DEV"
+  },
+  {
+    "objectID": "projects/wordpress-jenkins.html#job-jenkins-sync-dev-to-prod-wordpress",
+    "href": "projects/wordpress-jenkins.html#job-jenkins-sync-dev-to-prod-wordpress",
+    "title": "WordPress Deploy con Jenkins",
+    "section": "",
+    "text": "Sincronizar únicamente los cambios realizados en la carpeta de código (wordpress/) desde la VM DEV a la VM PROD, preservando:\n\nEl archivo .env de producción\nLos permisos actuales definidos por UID:GID en PROD\nLa base de datos y contenedores en ejecución\nBackup previo al despliegue para permitir rollback\n\n\n\n\nEn DEV se creó un archivo test.php con el siguiente contenido para verificar la sincronización:\n&lt;?php\necho \"&lt;h1&gt;Prueba de Sincronización DEV → PROD&lt;/h1&gt;\";\necho \"&lt;p&gt;Versión desde Jenkins: \" . date(\"Y-m-d H:i:s\") . \"&lt;/p&gt;\";\n?&gt;\nURL de prueba en PROD: http://192.168.1.100/test.php\n\n\n\n#!/bin/bash\nset -e\n\n# Variables\nDEV_HOST=\"dev@192.168.1.101\"\nPROD_HOST=\"prod@192.168.1.100\"\nSOURCE_DIR=\"/home/dev/test/wordpress/\"\nDEST_DIR=\"/home/prod/test/wordpress/\"\nTMP_DIR=\"./sync_tmp/\"\nBACKUP_DIR=\"/home/prod/backups/$(date +%Y%m%d_%H%M%S)\"\n\necho \"==&gt; Limpieza del temporal...\"\nrm -rf \"$TMP_DIR\"\nmkdir -p \"$TMP_DIR\"\n\necho \"==&gt; Descargando código desde DEV (sin .env)...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$DEV_HOST:$SOURCE_DIR\" \\\n  \"$TMP_DIR\"\n\necho \"==&gt; Creando backup en PROD...\"\nssh -o StrictHostKeyChecking=no \"$PROD_HOST\" \"mkdir -p $BACKUP_DIR && cp -r $DEST_DIR/* $BACKUP_DIR\"\n\necho \"==&gt; Subiendo a producción sin modificar permisos ni .env...\"\nrsync -avz \\\n  --no-perms --no-owner --no-group \\\n  --exclude='.env' \\\n  -e \"ssh -o StrictHostKeyChecking=no\" \\\n  \"$TMP_DIR\" \\\n  \"$PROD_HOST:$DEST_DIR\"\n\necho \"==&gt; Despliegue completado sin tocar permisos ni .env\"\n\n\n\n\nSolo se sincronizan archivos modificados (rsync incremental)\n.env no se sobrescribe\nPermisos en PROD permanecen intactos\nLa web refleja los cambios sin necesidad de reiniciar contenedores\nExiste un backup creado en /home/prod/backups/YYYYMMDD_HHMMSS\n\n\n\n\nEn caso de necesitar revertir los cambios, ejecutar:\nssh prod@192.168.1.100\ncp -r /home/prod/backups/20250522_082000/* /home/prod/test/wordpress/"
+  },
+  {
+    "objectID": "projects/wordpress-jenkins.html#consideraciones-técnicas",
+    "href": "projects/wordpress-jenkins.html#consideraciones-técnicas",
+    "title": "WordPress Deploy con Jenkins",
+    "section": "",
+    "text": "Las claves SSH se configuran sin passphrase para automatización\nStrictHostKeyChecking deshabilitado para conexiones automáticas\nExclusión del archivo .env para mantener configuraciones específicas del entorno\n\n\n\n\n\nUso de rsync para transferencias incrementales\nSincronización temporal en Jenkins para optimizar red\nPreservación de permisos existentes en producción\n\n\n\n\n\nLogs detallados de cada etapa del proceso\nVerificación de conectividad previa al despliegue\nSistema de backup automático antes de cada actualización"
+  },
+  {
+    "objectID": "index.html#qué-encontrarás-en-este-sitio",
+    "href": "index.html#qué-encontrarás-en-este-sitio",
+    "title": "Alex Cano | Junior DevOps y SysAdmin",
+    "section": "📌 ¿Qué encontrarás en este sitio?",
+    "text": "📌 ¿Qué encontrarás en este sitio?\n\n🌐 Proyectos DevOps documentados paso a paso\n\n📸 Capturas, scripts y pipelines reales\n\n📚 Certificaciones y formación continua\n\n🧪 Laboratorios con pruebas y errores comunes"
   }
 ]

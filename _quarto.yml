@@ -15,6 +15,8 @@ website:
             href: projects/index.qmd
           - text: "WordPress Dev en Local"
             href: projects/wordpress-dev-en-local.qmd
+          - text: "WordPress CD/CI con Jenkins"
+            href: projects/wordpress-jenkins.qmd
       - text: "Certificaciones"
         href: certifications.qmd
       - text: "Contacto"

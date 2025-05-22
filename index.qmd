@@ -1,28 +1,42 @@
 ---
-title: "Junior DevOps and SysAdmin"
-format: 
+title: "Alex Cano | Junior DevOps y SysAdmin"
+format:
   html:
-    theme: flatly
+    theme: cosmo
     css: styles.css
+    toc: true
+    toc-title: "En esta página"
+    toc-location: right
+    smooth-scroll: true
+    link-external-newwindow: true
 ---
 
-::: {.callout-info}
-## **Bienvenidos** 👋  
-Soy **Alex Cano** y este es mi portfolio. Aquí documento algunos de los trabajos y proyectos que voy realizando.  
-Mi enfoque principal está en **DevOps** y **SysAdmin**, áreas en las que me he especializado y estoy desarrollando continuamente.
-:::
 
-## 🛠️ Habilidades y Herramientas
+## 👋 ¡Bienvenidos!
 
-| Herramienta  | Nivel       |
-|--------------|-------------|
-| Linux        |  (Intermedio)     | 
-|   Docker       |  (Intermedio)    |
-| Jenkins      |  (Intermedio)  |
-| Kubernetes   |  (Básico)   |
-| Terraform    |  (Básico)   |
-| AWS          |  (Básico)      |
+Soy **Alex Cano** y este es mi portfolio. Aquí documento proyectos reales, laboratorios y soluciones enfocadas a administración de sistemas y automatización.  
+Mi enfoque principal está en **Linux, CI/CD, Docker, Jenkins y Cloud**, áreas en las que me especializo y aprendo continuamente.
 
+> 🚀 “Automatiza todo lo que puedas y documenta el resto.”
 
+---
 
+## 🔧 Habilidades y Herramientas
 
+| 🧰 Herramienta  | ⚙️ Nivel        |
+|----------------|----------------|
+| Linux          | Intermedio     |
+| Docker         | Intermedio     |
+| Jenkins        | Intermedio     |
+| Kubernetes     | Básico         |
+| Terraform      | Básico         |
+| AWS            | Básico         |
+
+---
+
+## 📌 ¿Qué encontrarás en este sitio?
+
+- 🌐 Proyectos DevOps documentados paso a paso  
+- 📸 Capturas, scripts y pipelines reales  
+- 📚 Certificaciones y formación continua  
+- 🧪 Laboratorios con pruebas y errores comunes  

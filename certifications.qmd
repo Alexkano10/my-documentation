@@ -1,0 +1,46 @@
+---
+title: "Certificaciones"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    code-copy: true
+    highlight-style: github
+    code-tools: true
+    css: styles.css
+---
+
+# 📜 Mis Certificaciones
+
+::: callout-tip
+Cursos y certificaciones que he completado.
+:::
+
+---
+
+## 🖥️ Fullstack & Java
+
+| Certificación                  | Ver imagen                     | Descargar PDF                |
+|--------------------------------|--------------------------------|------------------------------|
+| **Fullstack Junior en Java**   | ![](assets/certs/fullstack-java.jpg){width=150}   | [PDF](assets/certs/fullstack-java.pdf){.btn}    |
+| **Java Programming 1**         | ![](assets/certs/java-programming-1.jpg){width=150} | [PDF](assets/certs/java-programming-1.pdf){.btn} |
+
+---
+
+## 🌐 Redes (Cisco)
+
+| Certificación                            | Ver imagen                   | Descargar PDF              |
+|------------------------------------------|------------------------------|----------------------------|
+| **Conceptos Básicos de Redes (Cisco)**   | ![](assets/certs/cisco-networks.jpg){width=150} | [PDF](assets/certs/cisco-networks.pdf){.btn} |
+
+---
+
+## ⚙️ DevOps
+
+### Herramientas DevOps
+
+| Certificación               | Ver imagen                   | Descargar PDF           |
+|-----------------------------|------------------------------|-------------------------|
+| **Herramientas DevOps**     | ![](assets/certs/devops-tools.jpg){width=150} | [PDF](assets/certs/devops-tools.pdf){.btn} |

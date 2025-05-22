@@ -6,3 +6,4 @@ format: html
 # Mis proyectos destacados
 
 - [WordPress Dev en Local](wordpress-dev-en-local.qmd)
+- [WordPress CI/CD con Jenkins](wordpress-jenkins.qmd)

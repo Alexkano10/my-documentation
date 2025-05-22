@@ -1,0 +1,274 @@
+---
+title: "WordPress Deploy con Jenkins"
+subtitle: "CI/CD automatizado con Docker y sincronización entre entornos"
+author: "Alexkano10"
+date: last-modified
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: right
+    code-copy: true
+    highlight-style: github
+    code-tools: true
+    css: styles.css
+---
+
+# Documentación del Despliegue de WordPress con Jenkins
+
+Este documento describe la estructura, configuración y proceso de despliegue de una aplicación WordPress en un entorno de desarrollo, producción y Jenkins para CI/CD, utilizando contenedores Docker y sincronización automatizada mediante Jenkins.
+
+## 1. Infraestructura de las VMs
+
+### VM Producción (PROD)
+
+| Especificación | Detalle |
+|----------------|---------|
+| **Sistema operativo** | Debian 12 |
+| **Usuario** | `prod` |
+| **IP estática** | `192.168.1.100` |
+| **Recursos** | 2 CPU, 2048 MB RAM, 19GB disco |
+
+### VM Desarrollo (DEV)
+
+| Especificación | Detalle |
+|----------------|---------|
+| **Sistema operativo** | Debian 12 |
+| **Usuario** | `dev` |
+| **IP estática** | `192.168.1.101` |
+| **Recursos** | 2 CPU, 2048 MB RAM, 19GB disco |
+
+### VM Jenkins (CI/CD)
+
+| Especificación | Detalle |
+|----------------|---------|
+| **Sistema operativo** | Debian 12 |
+| **Usuario** | `jenkins` |
+| **IP estática** | `192.168.1.102` |
+| **Recursos** | 2 CPU, 2048 MB RAM, 19GB disco |
+
+## 2. Estructura del Proyecto en DEV
+
+La estructura del proyecto en el entorno de desarrollo se organiza de la siguiente manera:
+
+```plaintext
+/home/dev/test/
+├── database
+│   └── initdb        # Contiene scripts para inicialización de base de datos
+├── docker-compose.yml
+├── .env                 # Variables de entorno (excluido de sincronización)
+└── wordpress          # Código fuente del sitio
+```
+
+### Contenedores Docker (en DEV)
+
+- **`wp_app`**: WordPress (último)
+- **`wp_db`**: MariaDB 10.11
+
+### Configuración Docker Compose
+
+```yaml
+services:
+  db:
+    image: "mariadb:${MARIADB_VERSION}"
+    container_name: wp_db
+    ...
+  wordpress:
+    image: "wordpress:${WORDPRESS_VERSION}"
+    user: "${LOCAL_UID}:${LOCAL_GID}"
+    container_name: wp_app
+    depends_on:
+      - db
+    volumes:
+      - ./wordpress:/var/www/html:delegated
+    environment:
+      - APACHE_RUN_USER=#${LOCAL_UID}
+      - APACHE_RUN_GROUP=#${LOCAL_GID}
+```
+
+## 3. Jenkins: Automatización y Despliegue
+
+### Tarea 1: Conexión por SSH desde Jenkins
+
+#### Objetivo
+
+Verificar conectividad remota con las VMs de DEV y PROD mediante SSH y Jenkins.
+
+#### Pasos de Configuración
+
+1. Configurar claves SSH en las VMs y credenciales en Jenkins
+2. Crear job *Freestyle*
+3. Activar **SSH Agent**
+4. Configurar Build Step para ejecutar comandos
+
+#### Script de Verificación
+
+```bash
+echo "Conectando a DEV (101)..."
+ssh -o StrictHostKeyChecking=no dev@192.168.1.101 "hostname && uptime"
+
+echo "Conectando a PROD (100)..."
+ssh -o StrictHostKeyChecking=no prod@192.168.1.100 "hostname && uptime"
+```
+
+#### Resultado Esperado
+
+Conexión exitosa que muestra hostname y uptime de cada VM.
+
+---
+
+### Tarea 2: Sincronización de DEV a PROD con Jenkins
+
+#### Objetivo
+
+Sincronizar el código de la VM de desarrollo a la de producción, excluyendo `.env`, estableciendo permisos correctos y evitando transferencias innecesarias.
+
+#### Script de Sincronización
+
+```bash
+#!/bin/bash
+set -e
+
+echo "==> Instalando rsync (temporal)..."
+apt-get update && apt-get install -y rsync
+
+DEV_HOST="dev@192.168.1.101"
+PROD_HOST="prod@192.168.1.100"
+SOURCE_DIR="/home/dev/test/"
+DEST_DIR="/home/prod/test/"
+TMP_DIR="./sync_tmp/"
+
+rm -rf "$TMP_DIR"
+mkdir -p "$TMP_DIR"
+
+echo "==> Sincronizando desde DEV a Jenkins (excluyendo .env)..."
+rsync -avz \
+  --no-perms --no-owner --no-group \
+  --exclude='.env' \
+  -e "ssh -o StrictHostKeyChecking=no" \
+  "$DEV_HOST:$SOURCE_DIR" \
+  "$TMP_DIR"
+
+echo "==> Enviando a producción (con permisos y propietario www-data)..."
+rsync -avz \
+  --no-perms --no-owner --no-group \
+  --exclude='.env' \
+  --chown=www-data:www-data \
+  --chmod=D755,F644 \
+  -e "ssh -o StrictHostKeyChecking=no" \
+  "$TMP_DIR" \
+  "$PROD_HOST:$DEST_DIR"
+
+echo "==> Completado"
+```
+
+#### Explicación del Proceso
+
+- Se instala `rsync` temporalmente en el servidor Jenkins
+- Se sincroniza localmente en Jenkins desde DEV (excluyendo `.env`)
+- Se sube a PROD cambiando propietario a `www-data` y asegurando permisos seguros
+- `--no-perms`, `--no-owner`, `--no-group`: evita sobreescritura de metadatos desde DEV
+
+---
+
+## 🛠️ Job Jenkins: Sync DEV to PROD (WordPress)
+
+### 🎯 Objetivo
+
+Sincronizar únicamente los cambios realizados en la carpeta de código (`wordpress/`) desde la VM DEV a la VM PROD, preservando:
+
+- El archivo `.env` de producción
+- Los permisos actuales definidos por UID:GID en PROD
+- La base de datos y contenedores en ejecución
+- Backup previo al despliegue para permitir rollback
+
+### 🧪 Estructura de Prueba
+
+En DEV se creó un archivo `test.php` con el siguiente contenido para verificar la sincronización:
+
+```php
+<?php
+echo "<h1>Prueba de Sincronización DEV → PROD</h1>";
+echo "<p>Versión desde Jenkins: " . date("Y-m-d H:i:s") . "</p>";
+?>
+```
+
+**URL de prueba en PROD**: [http://192.168.1.100/test.php](http://192.168.1.100/test.php)
+
+### 🔄 Flujo del Job de Producción
+
+```bash
+#!/bin/bash
+set -e
+
+# Variables
+DEV_HOST="dev@192.168.1.101"
+PROD_HOST="prod@192.168.1.100"
+SOURCE_DIR="/home/dev/test/wordpress/"
+DEST_DIR="/home/prod/test/wordpress/"
+TMP_DIR="./sync_tmp/"
+BACKUP_DIR="/home/prod/backups/$(date +%Y%m%d_%H%M%S)"
+
+echo "==> Limpieza del temporal..."
+rm -rf "$TMP_DIR"
+mkdir -p "$TMP_DIR"
+
+echo "==> Descargando código desde DEV (sin .env)..."
+rsync -avz \
+  --no-perms --no-owner --no-group \
+  --exclude='.env' \
+  -e "ssh -o StrictHostKeyChecking=no" \
+  "$DEV_HOST:$SOURCE_DIR" \
+  "$TMP_DIR"
+
+echo "==> Creando backup en PROD..."
+ssh -o StrictHostKeyChecking=no "$PROD_HOST" "mkdir -p $BACKUP_DIR && cp -r $DEST_DIR/* $BACKUP_DIR"
+
+echo "==> Subiendo a producción sin modificar permisos ni .env..."
+rsync -avz \
+  --no-perms --no-owner --no-group \
+  --exclude='.env' \
+  -e "ssh -o StrictHostKeyChecking=no" \
+  "$TMP_DIR" \
+  "$PROD_HOST:$DEST_DIR"
+
+echo "==> Despliegue completado sin tocar permisos ni .env"
+```
+
+### ✅ Resultado Esperado
+
+- Solo se sincronizan archivos modificados (rsync incremental)
+- `.env` no se sobrescribe
+- Permisos en PROD permanecen intactos
+- La web refleja los cambios sin necesidad de reiniciar contenedores
+- Existe un backup creado en `/home/prod/backups/YYYYMMDD_HHMMSS`
+
+### 🔄 Procedimiento de Rollback
+
+En caso de necesitar revertir los cambios, ejecutar:
+
+```bash
+ssh prod@192.168.1.100
+cp -r /home/prod/backups/20250522_082000/* /home/prod/test/wordpress/
+```
+
+## Consideraciones Técnicas
+
+### Seguridad
+
+- Las claves SSH se configuran sin passphrase para automatización
+- StrictHostKeyChecking deshabilitado para conexiones automáticas
+- Exclusión del archivo `.env` para mantener configuraciones específicas del entorno
+
+### Rendimiento
+
+- Uso de rsync para transferencias incrementales
+- Sincronización temporal en Jenkins para optimizar red
+- Preservación de permisos existentes en producción
+
+### Monitoreo
+
+- Logs detallados de cada etapa del proceso
+- Verificación de conectividad previa al despliegue
+- Sistema de backup automático antes de cada actualización
