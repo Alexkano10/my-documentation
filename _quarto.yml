@@ -1,6 +1,9 @@
 project:
   type: website
-
+  output-dir: docs
+  resources:
+    - styles.css
+    - "*.css"  # incluye todos los CSS si tienes más
 website:
   title: "Alex Cano | Portfolio"
   navbar:
@@ -21,3 +24,10 @@ website:
         href: certifications.qmd
       - text: "Contacto"
         href: contact.qmd
+
+format:
+  html:
+    css: styles.css
+    toc: true
+    toc-title: "En esta página"
+    toc-location: right
